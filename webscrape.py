@@ -18,8 +18,12 @@ for row in rows:
     row_data = [cell.text.strip() for cell in cells]
     table_data.append(row_data)
 
+# First row is just "Title"
+table_data.pop(0)
+
 # Write the data to csv
 with open('tables.csv', 'w') as f:    
-    #Write table
+    # Write header row
+    f.write('Title,Obtained Status,Read Status\n')
     for row in table_data:
         f.write(f'"{row[0]}",Unobtained,Not Read\n')
