@@ -23,6 +23,7 @@ def change_status():
     book = input("Choose which book: # ")
     
     if book.isalnum():
+        book = int(book)
         print(lib.loc[book])
 
     else:
